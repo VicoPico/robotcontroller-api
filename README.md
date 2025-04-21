@@ -13,6 +13,7 @@ The **Robot Controller API** is a Spring Boot application that provides RESTful 
   - [How to Run Locally](#how-to-run-locally)
     - [Prerequisites](#prerequisites)
     - [Steps to Run Locally](#steps-to-run-locally)
+  - [Run the Application with Docker](#run-the-application-with-docker)
   - [API Endpoints](#api-endpoints)
 
 ---
@@ -66,6 +67,28 @@ mvn clean package
 java -jar target/robot-controller-api-1.0-SNAPSHOT.jar
 
 ```
+
+## Run the Application with Docker
+
+1. Build the Docker image:
+
+   ```bash
+   docker build -t robot-controller .
+   ```
+
+2. Run the application:
+
+   ```bash
+   docker run --rm -p 8080:8080 robot-controller
+   ```
+
+3. (Optional) Pull the image from Docker Hub:
+
+   ```bash
+   docker pull gomezvictor/robotcontroller-api:1.0
+   ```
+
+---
 
 4. Access the API: Open your browser or API client (e.g., Postman or curl) and navigate to http://localhost:8080/api.
 

@@ -59,6 +59,4 @@ replay_pid*
 /test-results/
 /target/surefire-reports/
 
-# Maven build and test directories
 /target/maven-status/
-/target/
