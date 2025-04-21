@@ -1,0 +1,64 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Build directories
+target/
+build/
+
+# Maven Wrapper
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Eclipse/STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# Java
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+
+# OS-specific
+Thumbs.db
+
+# Package Files
+*.zip
+*.tar.gz
+*.rar
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# Test-related files
+/test-results/
+/target/surefire-reports/
+
+# Maven build and test directories
+/target/maven-status/
+/target/
