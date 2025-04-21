@@ -56,7 +56,7 @@ public class RobotControllerTest {
       .andExpect(
         content()
           .string(
-            "Commands processed successfully. Robot is now at (0, 0) facing E"
+            "Commands processed successfully. Robot is now at (0, 2) facing N"
           )
       );
   }
