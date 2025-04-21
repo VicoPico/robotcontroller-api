@@ -9,7 +9,9 @@ public class GridRenderer {
 
   public String renderGrid(Room room, Robot robot) {
     StringBuilder grid = new StringBuilder();
-    for (int y = 0; y < room.getHeight(); y++) {
+
+    // Render from top to bottom (reverse the y-axis)
+    for (int y = room.getHeight() - 1; y >= 0; y--) { // Start from the top row
       for (int x = 0; x < room.getWidth(); x++) {
         if (x == robot.getX() && y == robot.getY()) {
           grid.append("[").append(robot.getDirection()).append("] ");
@@ -17,8 +19,9 @@ public class GridRenderer {
           grid.append("[ ] ");
         }
       }
-      grid.append("\n");
+      grid.append("\n"); // New line after each row
     }
+
     return grid.toString();
   }
 }
