@@ -42,54 +42,38 @@ public class Robot {
   // Logic to move the robot forward
   public void moveForward(Room room) {
     switch (direction) {
-      case "N":
+      case "N" -> {
         if (y > 0) y--;
-        break;
-      case "E":
+      }
+      case "E" -> {
         if (x < room.getWidth() - 1) x++;
-        break;
-      case "S":
+      }
+      case "S" -> {
         if (y < room.getHeight() - 1) y++;
-        break;
-      case "W":
+      }
+      case "W" -> {
         if (x > 0) x--;
-        break;
+      }
     }
   }
 
   // Logic to turn the robot left
   public void turnLeft() {
     switch (direction) {
-      case "N":
-        direction = "W";
-        break;
-      case "E":
-        direction = "N";
-        break;
-      case "S":
-        direction = "E";
-        break;
-      case "W":
-        direction = "S";
-        break;
+      case "N" -> direction = "W";
+      case "E" -> direction = "N";
+      case "S" -> direction = "E";
+      case "W" -> direction = "S";
     }
   }
 
   // Logic to turn the robot right
   public void turnRight() {
     switch (direction) {
-      case "N":
-        direction = "E";
-        break;
-      case "E":
-        direction = "S";
-        break;
-      case "S":
-        direction = "W";
-        break;
-      case "W":
-        direction = "N";
-        break;
+      case "N" -> direction = "E";
+      case "E" -> direction = "S";
+      case "S" -> direction = "W";
+      case "W" -> direction = "N";
     }
   }
 }
