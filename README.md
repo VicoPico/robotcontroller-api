@@ -15,6 +15,7 @@ The **Robot Controller API** is a Spring Boot application that provides RESTful 
     - [Steps to Run Locally](#steps-to-run-locally)
   - [Run the Application with Docker](#run-the-application-with-docker)
   - [API Endpoints](#api-endpoints)
+  - [API Usage Examples with cURL](#api-usage-examples-with-curl)
 
 ---
 
@@ -90,7 +91,7 @@ java -jar target/robot-controller-api-1.0-SNAPSHOT.jar
 
 ---
 
-4. Access the API: Open your browser or API client (e.g., Postman or curl) and navigate to http://localhost:8080/api.
+4. Access the API: Open your browser or API client (e.g., Postman or cURL) and navigate to http://localhost:8080/api.
 
 ## API Endpoints
 
@@ -170,4 +171,92 @@ Response:
 [ ] [ ] [ ] [ ] [ ]
 [ ] [ ] [ ] [ ] [ ]
 
+```
+
+## API Usage Examples with cURL
+
+1. Initialize Room
+
+**Endpoint:** `POST /api/initialize`
+
+**Description:** Initializes the room with the specified dimensions.
+
+**Request Body:**
+
+```bash
+curl -X POST http://localhost:8080/api/initialize \
+-H "Content-Type: application/json" \
+-d '{"width":5,"height":5}'
+
+```
+
+**Response:**
+
+```bash
+"Robot initialized at position: (5, 5) facing N"
+```
+
+2. Set Robot's Starting Position
+
+**Endpoint:** `POST /api/robot/start`
+
+**Description:** Sets the robot's initial position and orientation in the room.
+
+**Request Body:**
+
+```bash
+curl -X POST http://localhost:8080/api/robot/start \
+-H "Content-Type: application/json" \
+-d '{"x":2,"y":2,"direction":"N"}'
+
+```
+
+**Response:**
+
+```bash
+"Robot initialized at position: (2, 2) facing N"
+```
+
+3. Process Commands
+
+**Endpoint:** `POST /api/robot/commands`
+
+**Description:** Processes a sequence of commands to move the robot.
+
+**Request Body:**
+
+```bash
+curl -X POST http://localhost:8080/api/robot/commands \
+-H "Content-Type: application/json" \
+-d '{"commands":"LFFR"}'
+
+```
+
+**Response:**
+
+```bash
+"Commands processed successfully. Robot is now at (0, 2) facing N"
+```
+
+4. Visualize Grid
+
+**Endpoint:** `GET /api/grid`
+
+**Description:** Retrieves the current state of the grid, including the robot's position and orientation.
+
+**Request Body:**
+
+```bash
+curl -X GET http://localhost:8080/api/grid
+
+```
+
+**Response:**
+
+```bash
+[ ] [ ] [ ] [ ] [ ]
+[ ] [ ] [ ] [ ] [ ]
+[N] [ ] [ ] [ ] [ ]
+[ ] [ ] [ ] [ ] [ ]
+[ ] [ ] [ ] [ ] [ ]
 ```
